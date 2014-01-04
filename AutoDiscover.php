@@ -12,8 +12,6 @@ namespace Zend\Soap;
 use Zend\Server\Reflection;
 use Zend\Soap\AutoDiscover\DiscoveryStrategy\DiscoveryStrategyInterface as DiscoveryStrategy;
 use Zend\Soap\AutoDiscover\DiscoveryStrategy\ReflectionDiscovery;
-use Zend\Soap\Exception;
-use Zend\Soap\Wsdl;
 use Zend\Soap\Wsdl\ComplexTypeStrategy\ComplexTypeStrategyInterface as ComplexTypeStrategy;
 use Zend\Uri;
 
@@ -356,7 +354,7 @@ class AutoDiscover
     public function addFunction($function)
     {
         if (is_array($function)) {
-            foreach ($function as $row) {
+            foreach($function as $row) {
                 $this->addFunction($row);
             }
         } elseif (is_string($function)) {
